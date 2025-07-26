@@ -8,6 +8,10 @@ import re
 import os
 from googleapiclient.discovery import build
 from urllib.parse import urlparse, parse_qs
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
@@ -53,8 +57,14 @@ def extract_video_id(url):
     
     return None
 
-def get_youtube_comments(video_id, api_key='AIzaSyA8Aj7wmHf-13l6uavE_EA0Dmha5iWlI_c'):
+def get_youtube_comments(video_id, api_key=None):
     """Fetch comments from YouTube video using YouTube Data API"""
+    # Use environment variable if no API key provided
+    if api_key is None:
+        api_key = os.getenv('YOUTUBE_API_KEY')
+        if not api_key:
+            raise ValueError("YouTube API key not found in environment variables")
+    
     try:
         youtube = build('youtube', 'v3', developerKey=api_key)
         

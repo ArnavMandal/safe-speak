@@ -86,17 +86,24 @@ The frontend will run on `http://localhost:3000`
 2. Create a new project or select existing one
 3. Enable the **YouTube Data API v3**
 4. Create credentials (API Key)
-5. Copy the API key for use in the app
+5. Copy the API key
+
+### 4. Configure Environment Variables
+
+1. In the `backend/` directory, you should see a `.env` file
+2. Replace the placeholder API key in the `.env` file with your actual YouTube API key:
+   ```
+   YOUTUBE_API_KEY=your_actual_api_key_here
+   ```
 
 ## 🎯 Usage
 
 ### Analyze YouTube Video Comments
 
 1. Open the app in your browser (`http://localhost:3000`)
-2. Enter your YouTube Data API key
-3. Paste a YouTube video URL (e.g., `https://www.youtube.com/watch?v=...`)
-4. Click "Analyze Comments"
-5. View results showing:
+2. Paste a YouTube video URL (e.g., `https://www.youtube.com/watch?v=...`)
+3. Click "Analyze Comments"
+4. View results showing:
    - Video information (title, channel, views)
    - Analysis summary (total comments, toxic count, toxicity percentage)
    - Detailed list of toxic comments with toxicity scores
@@ -123,10 +130,11 @@ Analyze all comments from a YouTube video
 **Request:**
 ```json
 {
-  "video_url": "https://www.youtube.com/watch?v=...",
-  "api_key": "your_youtube_api_key"
+  "video_url": "https://www.youtube.com/watch?v=..."
 }
 ```
+
+**Note:** The YouTube API key is now stored in the `.env` file in the backend directory.
 
 **Response:**
 ```json

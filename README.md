@@ -7,7 +7,11 @@ A full-stack web application that analyzes YouTube video comments for toxic cont
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.18.0-orange.svg)](https://tensorflow.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
 
-## 🌍 Mission & Purpose
+## � Demo Video
+
+[Watch the demo video on Google Drive](https://drive.google.com/file/d/1isEJUv-f5nTn1WsRIn93r1N-g0SHaB0O/view?usp=sharing)
+
+## �🌍 Mission & Purpose
 
 This project was created to address the growing concern of online toxicity and cyberbullying in our digital world. By combining machine learning expertise with a commitment to digital safety, we aim to:
 
@@ -53,6 +57,12 @@ Online toxicity and cyberbullying affect millions of people worldwide, with seri
 
 ```bash
 cd backend
+
+#Activate virtual enviorment windows
+.\venv\Scripts\Activate.ps1
+
+# linux or macos
+source venv/bin/activate
 
 # Install Python dependencies
 pip install -r requirements.txt
